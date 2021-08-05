@@ -1,10 +1,14 @@
 #include <stdio.h>
 
+char hole[] = "123456789";
+
 void Disp(char disp[]);
+
+int RandomHole(char Line[]);
 
 int executionsystem(void)
 {
-    char disp[] = {'1','2','3','4','a','5','6','A','7','8','9','0','z'};
-    Disp(disp);
+    RandomHole(hole);
+    Disp(hole);
     return 1;
 }

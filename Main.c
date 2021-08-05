@@ -3,9 +3,13 @@
 
 int executionsystem();
 
+void RandomReset();
+
 int main(void)
 {
     printf("Senmon Kikaku System Code Start Up\n");
+
+    RandomReset();
 
     int error = 0;
 

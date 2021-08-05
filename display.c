@@ -123,6 +123,7 @@ void Line4(char cha)
 
 void Disp(char disp[])
 {
+    printf("\n\n");
     for(int i = 0 ; i < 7 ; i++){
         for(int j = 0 ; disp[j] != '\0' ; j++){
             char num[] = "0123456789";
