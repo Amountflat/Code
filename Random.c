@@ -3,7 +3,7 @@
 #include <time.h>
 
 //srandで初期化
-void RandomReset()
+void RandomReset(void)
 {
     srand((unsigned)time(NULL));
 }

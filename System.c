@@ -5,9 +5,10 @@ char hole[] = "123456789";
 
 void Disp(char disp[]);
 int RandomHole(char Line[]);
-int TimeCheckOver();
-void StartTimeSet();
+int TimeCheckOver(void);
+void StartTimeSet(void);
 int checkChar(char cha,char num[]);
+int checkBallInHole(void);
 
 int executionsystem(void)
 {
@@ -16,15 +17,21 @@ int executionsystem(void)
     while(1){
         if(kbhit() != 0){
             char cha = getch();
-            char num[] ="a12345";
+            char num[] ="a123456789";
 
             //実行部スタート(loop())
             if(cha == 'a'){
                 StartTimeSet();
+                RandomHole(hole);
+
                 while(1){
-                    RandomHole(hole);
                     Disp(hole);
 
+                    int CheckHole = checkBallInHole();
+
+                    if(CheckHole != 0){
+                        RandomHole(hole);
+                    }
                     if(kbhit() != 0){
                         if(!checkChar(getch(),num)){
                             break;
@@ -34,6 +41,8 @@ int executionsystem(void)
                         break;
                     }
                 }
+
+                printf("END\n");
             }
             //実行部エンド
 

@@ -1,7 +1,9 @@
 #include <stdio.h>
 
-//渡されたchar型chaがchar型num配列に含まれているかのチェック
 int checkChar(char cha,char num[]);
+int checkCharArray(char array1[],char array2[]);
+
+char displayedhole[] = "000000000";
 
 //Line0~4は7segにあてはめた表示をさせる
 void Line0(char cha)
@@ -117,25 +119,32 @@ void Line4(char cha)
 //受け取ったchar型disp配列を7seg表示する
 void Disp(char disp[])
 {
-    printf("\n\n");
-    for(int i = 0 ; i < 7 ; i++){
-        for(int j = 0 ; disp[j] != '\0' ; j++){
-            char num[] = "0123456789";
-            if(checkChar(disp[j],num)){
-                switch (i)
-                {
-                    case 0: Line0(disp[j]); break;
-                    case 1:
-                    case 2: Line1(disp[j]); break;
-                    case 3: Line2(disp[j]); break;
-                    case 4:
-                    case 5: Line3(disp[j]); break;
-                    case 6: Line4(disp[j]); break;
-                }
+    if(!checkCharArray(displayedhole,disp)){
+        printf("\n");
+        for(int i = 0 ; i < 7 ; i++){
+            for(int j = 0 ; disp[j] != '\0' ; j++){
+                char num[] = "0123456789";
+                if(checkChar(disp[j],num)){
+                    switch (i)
+                    {
+                        case 0: Line0(disp[j]); break;
+                        case 1:
+                        case 2: Line1(disp[j]); break;
+                        case 3: Line2(disp[j]); break;
+                        case 4:
+                        case 5: Line3(disp[j]); break;
+                        case 6: Line4(disp[j]); break;
+                    }
 
-                printf("   ");
+                    printf("   ");
+                }
             }
+            printf("\n");
         }
         printf("\n");
+
+        for(int i = 0 ; disp[i] != '\0' ;i++){
+            displayedhole[i] = disp[i];
+        }
     }
 }

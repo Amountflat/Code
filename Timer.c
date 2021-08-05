@@ -4,16 +4,16 @@
 clock_t StartTime = (clock_t)0;
 
 //開始の時間を記録
-void StartTimeSet()
+void StartTimeSet(void)
 {
     StartTime = clock();
 }
 
 //制限時間 超えたら1 まだなら0
-int TimeCheckOver()
+int TimeCheckOver(void)
 {
     //制限時間n秒 1000 * n
-    int limittime = 1000 * 10;
+    int limittime = 1000 * 30;
 
     if(clock() - StartTime > limittime){
         return 1;

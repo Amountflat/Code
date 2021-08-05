@@ -1,7 +1,7 @@
 #include <stdio.h>
 
-int executionsystem();
-void RandomReset();
+int executionsystem(void);
+void RandomReset(void);
 
 int main(void)
 {
