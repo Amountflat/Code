@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+//渡されたchar型chaがchar型num配列に含まれているかのチェック
 int checkCharDisp(char cha,char num[])
 {
     for(int i = 0 ; num[i] != '\0' ; i++){
@@ -11,6 +12,7 @@ int checkCharDisp(char cha,char num[])
     return 0;
 }
 
+//Line0~4は7segにあてはめた表示をさせる
 void Line0(char cha)
 {
     char num1[] = "023456789";
@@ -121,6 +123,7 @@ void Line4(char cha)
     }
 }
 
+//受け取ったchar型disp配列を7seg表示する
 void Disp(char disp[])
 {
     printf("\n\n");
