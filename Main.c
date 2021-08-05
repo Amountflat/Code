@@ -11,7 +11,7 @@ int main(void)
 
     while(1){
         error = executionsystem();
-        if(kbhit() != 0 || error == 1){
+        if(kbhit() != 0 || error != 0){
             break;
         }
     }
