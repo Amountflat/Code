@@ -9,6 +9,7 @@ int TimeCheckOver(void);
 void StartTimeSet(void);
 int checkChar(char cha,char num[]);
 int checkBallInHole(void);
+void SwitchLEDOnAndOff(int number);
 
 int executionsystem(void)
 {
@@ -30,6 +31,7 @@ int executionsystem(void)
                     int CheckHole = checkBallInHole();
 
                     if(CheckHole != 0){
+                        SwitchLEDOnAndOff(CheckHole);
                         RandomHole(hole);
                     }
                     if(kbhit() != 0){

@@ -2,6 +2,7 @@
 
 int checkChar(char cha,char num[]);
 int checkCharArray(char array1[],char array2[]);
+void LEDLightning(void);
 
 char displayedhole[] = "000000000";
 
@@ -120,6 +121,7 @@ void Line4(char cha)
 void Disp(char disp[])
 {
     if(!checkCharArray(displayedhole,disp)){
+        LEDLightning();
         printf("\n");
         for(int i = 0 ; i < 7 ; i++){
             for(int j = 0 ; disp[j] != '\0' ; j++){
