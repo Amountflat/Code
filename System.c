@@ -7,6 +7,7 @@ void Disp(char disp[]);
 int RandomHole(char Line[]);
 int TimeCheckOver();
 void StartTimeSet();
+int checkChar(char cha,char num[]);
 
 int executionsystem(void)
 {
@@ -15,6 +16,7 @@ int executionsystem(void)
     while(1){
         if(kbhit() != 0){
             char cha = getch();
+            char num[] ="a12345";
 
             //実行部スタート(loop())
             if(cha == 'a'){
@@ -23,10 +25,12 @@ int executionsystem(void)
                     RandomHole(hole);
                     Disp(hole);
 
-                    if(kbhit() != 0 && getch() != 'a'){
-                        break;
+                    if(kbhit() != 0){
+                        if(!checkChar(getch(),num)){
+                            break;
+                        }
                     }
-                    if(kbhit() != 0 || TimeCheckOver() != 0){
+                    if(TimeCheckOver() != 0){
                         break;
                     }
                 }
