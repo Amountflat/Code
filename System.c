@@ -10,6 +10,8 @@ void StartTimeSet(void);
 int checkChar(char cha,char num[]);
 int checkBallInHole(void);
 void SwitchLEDOnAndOff(int number);
+void LEDInit(void);
+int checkBingo(void);
 
 int executionsystem(void)
 {
@@ -24,6 +26,7 @@ int executionsystem(void)
             if(cha == 'a'){
                 StartTimeSet();
                 RandomHole(hole);
+                LEDInit();
 
                 while(1){
                     Disp(hole);
@@ -39,7 +42,7 @@ int executionsystem(void)
                             break;
                         }
                     }
-                    if(TimeCheckOver() != 0){
+                    if(TimeCheckOver() != 0 || checkBingo() != 0){
                         break;
                     }
                 }

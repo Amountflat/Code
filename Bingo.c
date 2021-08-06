@@ -2,6 +2,13 @@
 
 int LED[9] = {0};
 
+void LEDInit(void)
+{
+    for(int i = 0 ; i < 9 ; i++){
+        LED[i] = 0;
+    }
+}
+
 void SwitchLEDOnAndOff(int number)
 {
     if(number > 0 && number < 10){
