@@ -47,6 +47,8 @@ int executionsystem(void)
                     }
                 }
 
+                Disp(hole);
+
                 printf("END\n");
             }
             //実行部エンド

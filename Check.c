@@ -3,6 +3,7 @@
 
 int checkhole[9] = {0};
 int LED[9];
+char displayedhole[10];
 
 int CharArraySize(char cha[])
 {
@@ -43,12 +44,13 @@ int checkBallInHole(void)
 {
     if(kbhit() != 0){
         char cha = getch();
-        printf("%c\n",cha);
-        for(int i = 0 ; i < 9 ; i++){
-            if(cha == (char)(i + (int)'1')){
-                if(checkhole[i] == 0){
-                    checkhole[i] = 1;
-                    return i + 1;
+        if(cha >= '1' && cha >= '9'){
+            for(int i = 0 ; i < 9 ; i++){
+                if(cha == (char)(i + (int)'1')){
+                    if(checkhole[(int)displayedhole[i] - (int)'0'] == 0){
+                        checkhole[(int)displayedhole[i] - (int)'0'] = 1;
+                        return (int)displayedhole[i] - (int)'0';
+                    }
                 }
             }
         }

@@ -13,7 +13,7 @@ void StartTimeSet(void)
 int TimeCheckOver(void)
 {
     //制限時間n秒 1000 * n
-    int limittime = 1000 * 30;
+    int limittime = 1000 * 300;
 
     if(clock() - StartTime > limittime){
         return 1;

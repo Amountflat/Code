@@ -4,7 +4,7 @@ int checkChar(char cha,char num[]);
 int checkCharArray(char array1[],char array2[]);
 void LEDLightning(void);
 
-char displayedhole[] = "000000000";
+char displayedhole[10] = "000000000";
 
 //Line0~4は7segにあてはめた表示をさせる
 void Line0(char cha)
